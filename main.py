@@ -54,10 +54,13 @@ while not is_machine_off:
             secret_key = input("What is the secret key 🔐?: ")
             if secret_key == "TOPSECRET":
                 for resource in resources:
-                    if resource != "money":
+                    if resource != "money" and resource != "coffee":
                         print(f'{resource.title()}: {resources[resource]}ml')
                     else:
-                        print(f'{resource.title()}: ${resources[resource]}')
+                        if resource == "money":
+                            print(f'{resource.title()}: ${resources[resource]}')
+                        else:
+                            print(f'{resource.title()}: {resources[resource]}g')
             else:
                 print("Invalid Key. Try again.")
         elif order == "off":
